@@ -1,0 +1,18 @@
+apiVersion: kpt.dev/v1alpha1
+kind: Kptfile
+metadata:
+  name: auth-module
+packageMetadata:
+  shortDescription: sample description
+openAPI:
+  definitions:
+    io.k8s.cli.setters.auth-namespace:
+      x-k8s-cli:
+        setter:
+          name: auth-namespace
+          value: yourspace
+    io.k8s.cli.setters.auth-replicas:
+      x-k8s-cli:
+        setter:
+          name: auth-replicas
+          value: "1"

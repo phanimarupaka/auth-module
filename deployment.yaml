@@ -1,0 +1,12 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: yourspace # {"$kpt-set":"auth-namespace"}
+  name: auth-module-deployment
+spec:
+  replicas: 1 # {"$kpt-set":"auth-replicas"}
+  template:
+    spec:
+      containers:
+      - name: auth
+        image: auth:1.7.9
